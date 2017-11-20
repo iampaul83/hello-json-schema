@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "id": "https://tappaysdk.com/pay-by-prime.json",    
+    "type": "object", 
+    "required": ["prime", "partner_key", "merchant_id", "amount", "details", "cardholder"],    
+    "properties": {
+        "prime": { "$ref": "defs.json#/definitions/prime" },        
+        "partner_key": { "$ref": "defs.json#/definitions/partner_key" },
+        "merchant_id": { "$ref": "defs.json#/definitions/merchant_id" },        
+        "amount": { "$ref": "defs.json#/definitions/amount" },        
+        "currency": { "$ref": "defs.json#/definitions/currency" },        
+        "order_number": { "$ref": "defs.json#/definitions/order_number" },        
+        "bank_transaction_id": { "$ref": "defs.json#/definitions/bank_transaction_id" },        
+        "details": { "$ref": "defs.json#/definitions/details" },        
+        "cardholder": { "$ref": "defs.json#/definitions/cardholder" },        
+        "instalment": { "$ref": "defs.json#/definitions/instalment" },        
+        "delay_capture_in_days": { "$ref": "defs.json#/definitions/delay_capture_in_days" },        
+        "remember": { "$ref": "defs.json#/definitions/remember" }     
+    }
+  }

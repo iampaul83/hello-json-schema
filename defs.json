@@ -1,0 +1,88 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "id": "https://tappaysdk.com/defs.json",
+    "definitions": {
+        "prime": {
+            "type": "string",
+            "maxLength": 64,
+            "description": "代替卡片的一次性字串，由 TPDCard.createToken()的 onSuccessCallBack() 或 TPDirect.card.createToken() 回傳\n可用於 payByPrime API 內進行付款\n此字串的時效為 30 秒"
+        },
+        "partner_key": {
+            "type": "string",
+            "maxLength": 60
+        },
+        "merchant_id": {
+            "type": "string"
+        },
+        "amount": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "currency": {
+            "type": "string",
+            "pattern": "[A-z]{3}",
+            "description": "ISO 4217"
+        },
+        "order_number": {
+            "type": "string",
+            "maxLength": 50
+        },
+        "bank_transaction_id": {
+            "type": "string",
+            "pattern": "[A-Z0-9]{8,16}"
+        },
+        "details": {
+            "type": "string",
+            "maxLength": 100
+        },
+        "phone_number": {
+            "type": "string",
+            "pattern": "\\+[1-9]\\d{1,14}"
+        },
+        "name": {
+            "type": "string",
+            "maxLength": 50
+        },
+        "email": {
+            "type": "string",
+            "maxLength": 50
+        },
+        "zip_code": {
+            "type": "string",
+            "maxLength": 50
+        },
+        "address": {
+            "type": "string",
+            "maxLength": 100
+        },
+        "national_id": {
+            "type": "string",
+            "maxLength": 50
+        },
+        "cardholder": {
+            "type": "object",
+            "required": ["phone_number", "name", "email"],
+            "properties": {
+                "phone_number": { "$ref": "#/definitions/phone_number" },
+                "name": { "$ref": "#/definitions/name" },
+                "email": { "$ref": "#/definitions/email" },
+                "zip_code": { "$ref": "#/definitions/zip_code" },
+                "address": { "$ref": "#/definitions/address" },
+                "national_id": { "$ref": "#/definitions/national_id" } 
+            }
+        },
+        "instalment": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 99
+        },
+        "delay_capture_in_days": {
+            "type": "integer",
+            "maximum": 7,
+            "minimum": -1
+        },
+        "remember": {
+            "type": "boolean"
+        }
+    }
+  }
